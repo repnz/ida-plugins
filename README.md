@@ -5,6 +5,10 @@ My collection of plugins for IDA Pro.
 ## Installing plugins
 
 - Install [sark](https://github.com/tmr232/Sark). 
+
+You can simply put the script in the %idafolder%\\plugins directory, 
+But I recommend that you use the plugins loader:
+
 - Take the plugins loader plugin: 
 
 https://github.com/tmr232/Sark/blob/master/plugins/plugin_loader.py
