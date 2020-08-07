@@ -80,6 +80,11 @@ def has_register_reference(ins, reg_id):
     return False
 
 
+def get_highlight():
+    highlight_result = idaapi.get_highlight(idaapi.get_current_viewer())
+    return highlight_result[0] if highlight_result and highlight_result[1] else ''
+
+
 def get_register_identifier(register_name):
     """
     In the IDA API, Every register has an ID.
@@ -116,7 +121,7 @@ def run():
         log("Cannot xref registers outside of functions.")
         return
 
-    register_name = idaapi.get_highlighted_identifier()
+    register_name = get_highlight()
 
     try:
         register_id = get_register_identifier(register_name)
